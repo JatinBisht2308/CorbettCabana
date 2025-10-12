@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corbett Cabana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>HI this is corbett cabana.</h1>
+<body class="bg-white text-gray-800">
+
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="./assets/images/logo-cc.png" alt="Corbett Cabana Logo" class="h-10 w-10 object-contain" />
+          <div>
+            <h1 class="text-xl font-bold text-green-700">Corbett Cabana</h1>
+            <p class="text-xs text-green-500 -mt-1">The Jungle Heaven</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+          <a href="index.html" class="hover:text-green-700 transition duration-150">Home</a>
+          <a href="about.html" class="hover:text-green-700 transition duration-150">About Us</a>
+          <a href="gallery.html" class="hover:text-green-700 transition duration-150">Gallery</a>
+          <a href="contact.html" class="hover:text-green-700 transition duration-150">Contact Us</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" aria-label="Toggle menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-700">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Home</a>
+      <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">About Us</a>
+      <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Gallery</a>
+      <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Contact Us</a>
+    </div>
+
+  </nav>
+
+  <script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
 </body>
 </html>
