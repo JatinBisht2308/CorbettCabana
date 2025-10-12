@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Corbett Cabana Farm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="./assets/images/logo-cc.png" alt="Corbett Cabana Farm Logo" class="h-10 w-10 object-contain rounded-full" />
+          <div>
+            <h1 class="text-xl font-bold text-green-700">Corbett Cabana  Farm</h1>
+            <p class="text-xs text-green-500 -mt-1">The Jungle Heaven</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+          <a href="index.html" class="hover:text-green-700 transition duration-150">Home</a>
+          <a href="about.html" class="hover:text-green-700 transition duration-150">About Us</a>
+          <a href="gallery.html" class="hover:text-green-700 transition duration-150">Gallery</a>
+          <a href="contact.html" class="hover:text-green-700 transition duration-150">Contact Us</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" aria-label="Toggle menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-700">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Home</a>
+      <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">About Us</a>
+      <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Gallery</a>
+      <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Contact Us</a>
+    </div>
+  </nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="relative h-[340px] md:h-[480px] w-full flex items-center justify-center">
+    <!-- Background Image -->
+    <img src="./assets/images/slide-4.webp" alt="Corbett Cabana Farm Gate" class="absolute inset-0 w-full h-full object-cover brightness-75"/>
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <!-- Hero Text -->
+    <div class="relative z-10 flex flex-col items-center justify-center w-full px-4">
+      <h2 class="text-lg md:text-2xl font-medium text-white mb-2 tracking-widest">Welcome To Corbett Cabana Farm</h2>
+      <h1 class="text-3xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg mb-2">Where Nature Meets Comfort</h1>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="bg-white w-full py-16 px-4 md:px-0">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <!-- Right: About Content -->
+        <div class="w-full md:w-3/5">
+          <h2 class="text-green-700 text-lg uppercase font-semibold tracking-widest mb-2">About Corbett Cabana Farm</h2>
+          <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            The Jungle Heaven in the Heart of Corbett
+          </h3>
+          <p class="text-gray-700 text-lg md:text-xl mb-6 leading-relaxed">
+            Corbett Cabana Farm is your private escape amid the wild charm of Jim Corbett National Park. Our boutique property blends eco-luxury and rustic character, offering an immersive nature experience with all modern indulgence. Relax in beautifully appointed rooms, rise to the melody of birds, and breathe the pure mountain air—every moment is crafted for tranquility, adventure, and genuine warmth.
+          </p>
+          <ul class="text-gray-800 text-base space-y-2 mb-6 list-disc list-inside">
+            <li>Spacious, thoughtfully designed cabanas with jungle/garden views</li>
+            <li>Organic dining celebrating local flavors</li>
+            <li>Refresh at the pool, rejuvenate with Jacuzzi, or cozy up by the bonfire</li>
+            <li>Guided safaris & village experiences arranged on request</li>
+            <li>Eco-friendly practices and personalized hospitality</li>
+          </ul>
+          <a href="gallery.html" class="inline-block bg-green-700 text-white font-semibold py-3 px-8 rounded hover:bg-green-800 transition-colors duration-200">
+            View Our Gallery
+          </a>
+        </div>
+        <!-- Left: Resort Image -->
+        <div class="w-full md:w-2/5 flex-shrink-0">
+          <img src="./assets/images/slide-1.webp" alt="Cabana Room" class="rounded-xl shadow-lg w-full"/>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <footer class="relative pt-14 pb-4 text-white bg-gradient-to-b from-[#183023] to-[#222b21]">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0 w-full h-full bg-[url('./assets/images/slide-2.webp')] bg-cover bg-center opacity-40"></div>
+  <!-- Overlay content -->
+  <div class="relative z-10 max-w-7xl mx-auto flex flex-wrap justify-between items-start gap-y-10 px-4 md:px-12">
+    <!-- Left: Logo and tagline -->
+    <div class="flex flex-col max-w-[350px]">
+      <div class="flex items-center gap-3 mb-5">
+        <img src="./assets/images/logo-cc.png" alt="Corbett Cabana Farm Logo" class="w-20 h-20 rounded-full" />
+        <div>
+          <h1 class="text-3xl font-bold text-white">Corbett Cabana  Farm</h1>
+          <p class="text-md text-green-300 -mt-1">The Jungle Heaven</p>
+        </div>
+      </div>
+      <p class="text-base text-gray-200 leading-relaxed mb-5">
+        Escape to the heart of the jungle with comfort and luxury. Discover tranquil stays, vibrant nature, and the perfect blend of relaxation and adventure at Corbett Cabana Farm.
+      </p>
+   
+    </div>
+    <!-- Center: Information -->
+    <div class="flex flex-col min-w-[180px] max-w-[200px]">
+      <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">Information</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-teal-200">About Us</a></li>
+        <li><a href="#" class="hover:text-teal-200">Rooms & Accommodation</a></li>
+        <li><a href="#" class="hover:text-teal-200">Gallery</a></li>
+        <li><a href="#" class="hover:text-teal-200">Nearby Attractions</a></li>
+        <li><a href="#" class="hover:text-teal-200">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Right: Reach Us -->
+    <div class="flex flex-col min-w-[240px]">
+      <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">Reach Us</h3>
+      <div class="flex items-center mb-2">
+        <span class="mr-3 text-xl"><i class="fas fa-phone-alt"></i></span>
+        <span>+91-9876543210</span>
+      </div>
+      <div class="flex items-center mb-2">
+        <span class="mr-3 text-xl"><i class="fas fa-envelope"></i></span>
+        <span>contact@corbettcabana.com</span>
+      </div>
+      <div class="flex items-center mb-2">
+        <span class="mr-3 text-xl"><i class="fas fa-map-marker-alt"></i></span>
+        <span>
+          7CVQ+WR, Fatehpur Range,<br> Uttarakhand 263140
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="relative z-10 border-t border-gray-700 mt-9 pt-5 text-center text-gray-400 text-base">
+    Copyright 2025 - Corbett Cabana Farm. All Rights Reserved.
+  </div>
+
+</footer>
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
+</body>
+</html>
