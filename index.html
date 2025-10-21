@@ -1,303 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Corbett Cabana Farm</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    section.relative img {
-      transition: opacity 1s ease, transform 1s ease;
-      transform-origin: center center;
-      transform: scale(1);
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      z-index: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corbett Cabana Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      section.relative img {
+        transition: opacity 1s ease, transform 1s ease;
+        transform-origin: center center;
+        transform: scale(1);
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        z-index: 0;
+      }
 
-    section.relative img.active {
-      opacity: 1;
-      z-index: 1;
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body class="bg-white text-gray-800">
-<nav class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center space-x-3">
-          <img src="./assets/images/logo-cc.png" alt="Corbett Cabana Farm Logo" class="h-10 w-10 object-contain rounded-full" />
-          <div>
-            <h1 class="text-xl font-bold text-green-700">Corbett Cabana Farm</h1>
-            <p class="text-xs text-green-500 -mt-1">The Jungle Heaven</p>
+      section.relative img.active {
+        opacity: 1;
+        z-index: 1;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center space-x-3">
+            <img
+              src="./assets/images/logo-cc.png"
+              alt="Corbett Cabana Farm Logo"
+              class="h-10 w-10 object-contain rounded-full"
+            />
+            <div>
+              <h1 class="text-xl font-bold text-green-700">
+                Corbett Cabana Farm
+              </h1>
+              <p class="text-xs text-green-500 -mt-1">The Jungle Heaven</p>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+            <a
+              href="index.html"
+              class="hover:text-green-700 transition duration-150"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-green-700 transition duration-150"
+              >About Us</a
+            >
+            <a
+              href="gallery.html"
+              class="hover:text-green-700 transition duration-150"
+              >Gallery</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-green-700 transition duration-150"
+              >Contact Us</a
+            >
           </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              aria-label="Toggle menu"
+              class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-700"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-16 left-0 w-full bg-white transition-all duration-500 ease-in-out overflow-hidden shadow-2xl rounded-b-2xl px-4 py-2 pb-4 space-y-2 border border-green-200 z-50"
+      >
+        <a
+          href="index.html"
+          class="group flex items-center gap-3 px-3 py-3 rounded-lg font-semibold text-green-800 hover:bg-green-100 hover:text-green-700 transition-colors duration-200 shadow hover:shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="20"
+            height="20"
+            viewBox="0,0,256,256"
+          >
+            <g
+              fill="#166534"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <g transform="scale(5.12,5.12)">
+                <path
+                  d="M25,1.05078c-0.2175,0 -0.43414,0.06898 -0.61914,0.20898l-23,17.95117c-0.43,0.34 -0.50992,0.9682 -0.16992,1.4082c0.34,0.43 0.9682,0.50992 1.4082,0.16992l1.38086,-1.07812v26.28906c0,0.55 0.45,1 1,1h14v-18h12v18h14c0.55,0 1,-0.45 1,-1v-26.28906l1.38086,1.07812c0.19,0.14 0.39914,0.21094 0.61914,0.21094c0.3,0 0.58906,-0.13086 0.78906,-0.38086c0.34,-0.44 0.26008,-1.0682 -0.16992,-1.4082l-23,-17.95117c-0.185,-0.14 -0.40164,-0.20898 -0.61914,-0.20898zM35,5v1.05078l6,4.67969v-5.73047z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          Home
         </a>
+        <a
+          href="about.html"
+          class="group flex items-center gap-3 px-3 py-3 rounded-lg font-semibold text-green-800 hover:bg-green-100 hover:text-green-700 transition-colors duration-200 shadow hover:shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="20"
+            height="20"
+            viewBox="0,0,256,256"
+          >
+            <g
+              fill="#166534"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <g transform="scale(10.66667,10.66667)">
+                <path
+                  d="M12,2c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM9,10c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h1v8h-1c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h6c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-1v-9c0,-0.552 -0.448,-1 -1,-1h-2z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          About Us
+        </a>
+        <a
+          href="gallery.html"
+          class="group flex items-center gap-3 px-3 py-3 rounded-lg font-semibold text-green-800 hover:bg-green-100 hover:text-green-700 transition-colors duration-200 shadow hover:shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="#166534"
+              fill-rule="evenodd"
+              d="M21 5H7V3h16v14h-2zm-4 4H3v10h14zM1 7v14h18V7zm14 5.5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0"
+              clip-rule="evenodd"
+            />
+            <path
+              fill="#166534"
+              fill-rule="evenodd"
+              d="M7.4 14.828L3.228 19H3v-2.6L7.4 12l7 7h-2.83z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Gallery
+        </a>
+        <a
+          href="contact.html"
+          class="group flex items-center gap-3 px-3 py-3 rounded-lg font-semibold text-green-800 hover:bg-green-100 hover:text-green-700 transition-colors duration-200 shadow hover:shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill="#166534"
+              d="M12.2 10c-1.1-.1-1.7 1.4-2.5 1.8C8.4 12.5 6 10 6 10S3.5 7.6 4.1 6.3c.5-.8 2-1.4 1.9-2.5c-.1-1-2.3-4.6-3.4-3.6C.2 2.4 0 3.3 0 5.1c-.1 3.1 3.9 7 3.9 7c.4.4 3.9 4 7 3.9c1.8 0 2.7-.2 4.9-2.6c1-1.1-2.5-3.3-3.6-3.4z"
+            />
+          </svg>
+          Contact Us
+        </a>
+      </div>
+    </nav>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
-          <a href="index.html" class="hover:text-green-700 transition duration-150">Home</a>
-          <a href="about.html" class="hover:text-green-700 transition duration-150">About Us</a>
-          <a href="gallery.html" class="hover:text-green-700 transition duration-150">Gallery</a>
-          <a href="contact.html" class="hover:text-green-700 transition duration-150">Contact Us</a>
-        </div>
+    <section class="relative w-full h-[500px] md:h-[750px] overflow-hidden">
+      <!-- Slider images -->
+      <img
+        src="./assets/images/slide-1.webp"
+        alt="Slide 1"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <img
+        src="./assets/images/slide-2.webp"
+        alt="Slide 2"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <img
+        src="./assets/images/slide-3.webp"
+        alt="Slide 3"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <img
+        src="./assets/images/slide-4.webp"
+        alt="Slide 4"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <!-- ... (other images if implementing a slider) -->
 
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" aria-label="Toggle menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-700">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
+      <!-- Centered Text Overlay with partial transparency only behind text -->
+      <div
+        class="absolute inset-0 z-10 flex flex-col justify-center items-center h-full text-center px-4 md:px-0"
+      >
+        <div
+          class="w-full h-[120px] inline-block bg-black bg-opacity-40 px-4 py-3 absolute md:flex md:justify-center md:flex-col md:items-center bottom-0 md:bottom-[48%] transform md:translate-y-1/2"
+        >
+          <h1 class="text-xl md:text-4xl font-bold mb-2 text-white">
+            Welcome to Corbett Cabana Farm
+          </h1>
+          <p id="slide-text" class="text-md md:text-xl max-w-xl text-white">
+            Experience the perfect blend of nature and comfort in the heart of
+            the jungle.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
-      <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Home</a>
-      <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">About Us</a>
-      <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Gallery</a>
-      <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-green-100">Contact Us</a>
-    </div>
-  </nav>
+    <!-- About Section -->
+    <section class="w-full bg-gray-50 py-16 px-4 md:px-0 bg-green-100">
+      <div class="max-w-[850px] mx-auto flex flex-col items-center text-center">
+        <div class="w-16 h-1 bg-green-600 mb-4"></div>
+        <h2
+          class="text-green-700 uppercase tracking-widest text-sm font-semibold mb-2"
+        >
+          Welcome to Corbett Cabana Farm
+        </h2>
+        <h3
+          class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8"
+        >
+          Cozy haven nestled in the heart of Corbett
+        </h3>
+        <p class="text-gray-700 text-lg md:text-xl mb-10">
+          Discover Corbett Cabana Farm, your tranquil oasis nestled in
+          <span class="bg-green-200 text-green-800 font-semibold px-1 rounded">
+            7 km dense forest area
+          </span>
+          near Nainital. Our boutique resort offers an exclusive blend of luxury
+          and nature, ensuring every guest enjoys privacy, relaxation, and
+          authentic hospitality. Wake up to stunning views of lush greenery, the
+          sound of birdsong, and fresh mountain air. Each elegantly designed
+          room is equipped for comfort and serenity, perfect for couples,
+          families, or solo travelers seeking a peaceful getaway.
+        </p>
 
-  <section class="relative w-full h-[500px] md:h-[750px] overflow-hidden">
-    <!-- Slider images -->
-    <img src="./assets/images/slide-1.webp" alt="Slide 1" class="active" />
-    <img src="./assets/images/slide-2.webp" alt="Slide 2" />
-    <img src="./assets/images/slide-3.webp" alt="Slide 3" />
-    <img src="./assets/images/slide-4.webp" alt="Slide 4" />
+        <a
+          href="about.html"
+          class="inline-block border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white font-semibold py-3 px-8 rounded transition-colors duration-200"
+        >
+          Learn More
+        </a>
+      </div>
+    </section>
 
-    <!-- Static text content -->
-    <div class="relative z-10 flex flex-col justify-center items-center h-full bg-black bg-opacity-40 text-center text-white px-4 md:px-0">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Corbett Cabana Farm</h1>
-      <p id="slide-text" class="text-lg md:text-2xl max-w-xl">
-        Experience the perfect blend of nature and comfort in the heart of the jungle.
+    <!-- Trekking/Adventure Section START -->
+    <section
+      class="bg-white py-16 px-4 md:px-0 flex flex-col items-center text-center"
+    >
+      <div class="w-16 h-1 bg-green-600 mb-4"></div>
+      <h2
+        class="text-green-700 uppercase tracking-widest text-sm font-semibold mb-2"
+      >
+        Adventure & Trekking
+      </h2>
+      <h3
+        class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-8"
+      >
+        Discover the Trails Beyond Our Farm
+      </h3>
+      <p class="text-gray-700 text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+        From Corbett Cabana Farm, embark on a unique trekking route through
+        dense forest: first to the ancient Hathikhal Shiva Temple nestled in
+        rocky caves (5 km), then on to the picturesque Hathikhal Waterfall (9
+        km), and all the way to Nainital along the winding river. Whether
+        spiritual serenity or wild adventure is your goal, this journey offers
+        unforgettable experiences amidst pristine nature.
       </p>
-    </div>
-  </section>
-<!-- About Section -->
-<section class="w-full bg-gray-50 py-16 px-4 md:px-0 bg-green-100">
-  <div class="max-w-[850px] mx-auto flex flex-col items-center text-center">
-    <div class="w-16 h-1 bg-green-600 mb-4"></div>
-    <h2 class="text-green-700 uppercase tracking-widest text-sm font-semibold mb-2">
-      Welcome to Corbett Cabana Farm
-    </h2>
-    <h3 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
-      Cozy haven nestled in the heart of Corbett
-    </h3>
-   <p class="text-gray-700 text-lg md:text-xl mb-10">
-  Discover Corbett Cabana Farm, your tranquil oasis nestled in 7 km dense forest area near Nainital. Our boutique resort offers an exclusive blend of luxury and nature, ensuring every guest enjoys privacy, relaxation, and authentic hospitality. Wake up to stunning views of lush greenery, the sound of birdsong, and fresh mountain air. Each elegantly designed room is equipped for comfort and serenity, perfect for couples, families, or solo travelers seeking a peaceful getaway.
-</p>
-
-    <a href="about.html" class="inline-block border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white font-semibold py-3 px-8 rounded transition-colors duration-200">
-      Learn More
-    </a>
-  </div>
-</section>
-
-
-<section style="display: flex;  flex-wrap: wrap; gap: 40px; align-items: flex-start;" class="md:mt-16 md:mb-16 p-4 md:px-8 flex-col-reverse md:flex-row">
-  <!-- Left Column: Images (side by side horizontally) -->
-  <div style="flex: 1 1 320px; display: flex; flex-direction: row;"class="gap-2 md:gap-8">
-    <div style="padding: 8px;">
-      <img src="./assets/images/room-1.webp" alt="Corbett Cabana Farm Room View" style="width: 100%; border-radius: 8px;">
-    </div>
-    <div  class=" md:pt-[70px] p-[4px]">
-      <img src="./assets/images/room-2.webp" alt="Corbett Cabana Farm Interior" style="width: 100%; border-radius: 8px;">
-    </div>
-  </div>
-  
-  <!-- Right Column: Text -->
-  <div style="flex: 1 1 480px;">
-    <p style="text-transform: uppercase; letter-spacing: 2px; color: #606060; margin-bottom: 0;">STAY AT Corbett Cabana Farm</p>
-    <h1 style="font-size: 2.8rem; font-weight: bold; margin: 0 0 18px 0;">Rooms & Accommodation</h1>
-    <p style="font-size: 1.16rem; color: #505050;">
-      Each cabana at Corbett Cabana Farm is carefully crafted to blend serene wilderness with refined comfort. Whether unwinding on the verandah, breathing in the forest air, or gazing at starry nights, every moment promises tranquility and charm. Our dedication ensures a rejuvenating and exclusive stay, making your forest retreat both memorable and comforting.
-    </p>
-    
-    <h2 style="font-size: 1.35rem; font-weight: bold; margin-top: 10px;">Room Facilities</h2>
-    <p style="font-size: 1.08rem; color: #444; border-top: 1px solid #eee; padding-top: 10px;">
-      Cozy Queen Bed &vert; Private Verandah &vert; Air Conditioning &vert; Complimentary Mineral Water &vert; Smart LED TV &vert; Forest/Garden View &vert; Contemporary Seating Area &vert; Luxury Bath &vert; Tea/Coffee Maker
-    </p>
-    
-   <a
-  href="/gallery"
-  class="inline-block px-8 py-3 border-2 border-neutral-800 rounded font-semibold text-neutral-800 text-[1.09rem] mt-7 no-underline bg-transparent hover:bg-green-600 hover:text-white hover:border-white transition-colors duration-200"
->
-  Explore Rooms
-</a>
-
-  </div>
-</section>
-
-
-
-
-
-<section class="bg-[#f9f9f9] py-20 flex flex-col items-center">
-  <!-- Subtitle -->
-  <div class="mb-5">
-    <span class="border border-[#e6e8c9] bg-[#f9f9f9] rounded px-5 py-2 text-[#a7ad7b] text-xl tracking-wider font-semibold">FACILITIES</span>
-  </div>
-  <!-- Title -->
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-tight">What we Offer</h2>
-  <!-- Cards -->
-  <div class="flex flex-wrap justify-center gap-12 w-full max-w-6xl">
-    <!-- Facility 1 -->
-    <div class="flex flex-col items-center w-[240px]">
-      <div class="relative">
-        <div class="absolute inset-0 rounded-xl border border-[#d3d5d7] rotate-3"></div>
-        <div class="bg-neutral-900 rounded-xl w-[200px] h-[180px] flex items-center justify-center">
-          <img src="./assets/icons/jacuzzi.png" class="w-20" alt="Jacuzzi">
-          <span class="absolute bottom-4 right-5 text-white text-xl font-bold">1</span>
+      <div class="flex flex-wrap justify-center gap-8 w-full">
+        <div class="flex flex-col items-center w-[45%]">
+          <img
+            src="./assets/images/waterfall.jpg"
+            alt="Waterfall Trek"
+            class="w-full h-auto mb-2"
+          />
+          <span class="font-semibold text-green-700">Hathikhal Waterfall</span>
+          <span class="text-sm text-gray-500">(9 km total)</span>
+        </div>
+        <div class="flex flex-col items-center w-[45%]">
+          <img
+            src="./assets/images/temple.jpg"
+            alt="Temple Trek"
+            class="w-full h-auto mb-2"
+          />
+          <span class="font-semibold text-green-700">Trail to Nainital</span>
+          <span class="text-sm text-gray-500">Through forest & streams</span>
         </div>
       </div>
-      <span class="text-2xl mt-7 font-semibold text-neutral-900">Jacuzzi</span>
-    </div>
-    <!-- Facility 2 -->
-    <div class="flex flex-col items-center w-[240px]">
-      <div class="relative">
-        <div class="absolute inset-0 rounded-xl border border-[#d3d5d7] -rotate-6"></div>
-        <div class="bg-neutral-900 rounded-xl w-[200px] h-[180px] flex items-center justify-center">
-          <img src="./assets/icons/pool.png" class="w-20" alt="Pool">
-          <span class="absolute bottom-4 right-5 text-white text-xl font-bold">2</span>
+    </section>
+    <!-- Trekking/Adventure Section END -->
+
+    <section
+      style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start"
+      class="md:mt-16 md:mb-16 p-4 md:px-8 flex-col-reverse md:flex-row bg-green-100"
+    >
+      <!-- Left Column: Images (side by side horizontally) -->
+      <div
+        style="flex: 1 1 320px; display: flex; flex-direction: row"
+        class="gap-2 md:gap-8"
+      >
+        <div style="padding: 8px">
+          <img
+            src="./assets/images/room-1.webp"
+            alt="Corbett Cabana Farm Room View"
+            style="width: 100%; border-radius: 8px"
+          />
+        </div>
+        <div class="md:pt-[70px] p-[4px]">
+          <img
+            src="./assets/images/room-2.webp"
+            alt="Corbett Cabana Farm Interior"
+            style="width: 100%; border-radius: 8px"
+          />
         </div>
       </div>
-      <span class="text-2xl mt-7 font-semibold text-neutral-900">Pool</span>
-    </div>
-    <!-- Facility 3 -->
-    <div class="flex flex-col items-center w-[240px]">
-      <div class="relative">
-        <div class="absolute inset-0 rounded-xl border border-[#d3d5d7] rotate-3"></div>
-        <div class="bg-neutral-900 rounded-xl w-[200px] h-[180px] flex items-center justify-center">
-          <img src="./assets/icons/dinning.png" class="w-20" alt="Dining">
-          <span class="absolute bottom-4 right-5 text-white text-xl font-bold">3</span>
+
+      <!-- Right Column: Text -->
+      <div style="flex: 1 1 480px">
+        <p
+          style="
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #606060;
+            margin-bottom: 0;
+          "
+        >
+          STAY AT Corbett Cabana Farm
+        </p>
+        <h1 style="font-size: 2.8rem; font-weight: bold; margin: 0 0 18px 0">
+          Rooms & Accommodation
+        </h1>
+        <p style="font-size: 1.16rem; color: #505050">
+          Each cabana at Corbett Cabana Farm is carefully crafted to blend
+          serene wilderness with refined comfort. Whether unwinding on the
+          verandah, breathing in the forest air, or gazing at starry nights,
+          every moment promises tranquility and charm. Our dedication ensures a
+          rejuvenating and exclusive stay, making your forest retreat both
+          memorable and comforting.
+        </p>
+
+        <h2 style="font-size: 1.35rem; font-weight: bold; margin-top: 10px">
+          Room Facilities
+        </h2>
+        <p
+          style="
+            font-size: 1.08rem;
+            color: #444;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+          "
+        >
+          Cozy Queen Bed &vert; Private Verandah &vert; Air Conditioning &vert;
+          Complimentary Mineral Water &vert; Smart LED TV &vert; Forest/Garden
+          View &vert; Contemporary Seating Area &vert; Luxury Bath &vert;
+          Tea/Coffee Maker
+        </p>
+
+        <a
+          href="/gallery"
+          class="inline-block px-8 py-3 border-2 border-neutral-800 rounded font-semibold text-neutral-800 text-[1.09rem] mt-7 no-underline bg-transparent hover:bg-green-600 hover:text-white hover:border-white transition-colors duration-200"
+        >
+          Explore Rooms
+        </a>
+      </div>
+    </section>
+
+    <!-- what we offer section -->
+    <section class="bg-[#f9f9f9] py-20 flex flex-col items-center">
+      <!-- Subtitle -->
+      <div class="mb-5">
+        <span
+          class="border border-[#e6e8c9] bg-[#f9f9f9] rounded px-5 py-2 text-[#a7ad7b] text-xl tracking-wider font-semibold"
+          >FACILITIES</span
+        >
+      </div>
+      <!-- Title -->
+      <h2
+        class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-tight"
+      >
+        What we Offer
+      </h2>
+      <!-- Cards -->
+      <div class="flex flex-wrap justify-center gap-12 w-full max-w-6xl">
+        <!-- Facility 1 -->
+        <div class="flex flex-col items-center w-[340px]">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-xl border border-[#d3d5d7] rotate-3"
+            ></div>
+            <div
+              class="bg-neutral-900 rounded-xl w-[300px] h-[280px] flex items-center justify-center"
+            >
+              <img
+                src="./assets/icons/jacuzzi.png"
+                class="w-[150px]"
+                alt="Jacuzzi"
+              />
+              <span
+                class="absolute bottom-4 right-5 text-white text-xl font-bold"
+                >1</span
+              >
+            </div>
+          </div>
+          <span class="text-2xl mt-7 font-semibold text-neutral-900"
+            >Jacuzzi</span
+          >
+        </div>
+        <!-- Facility 2 -->
+        <div class="flex flex-col items-center w-[340px]">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-xl border border-[#d3d5d7] -rotate-6"
+            ></div>
+            <div
+              class="bg-neutral-900 rounded-xl w-[300px] h-[280px] flex items-center justify-center"
+            >
+              <img src="./assets/icons/pool.png" class="w-[150px]" alt="Pool" />
+              <span
+                class="absolute bottom-4 right-5 text-white text-xl font-bold"
+                >2</span
+              >
+            </div>
+          </div>
+          <span class="text-2xl mt-7 font-semibold text-neutral-900">Pool</span>
+        </div>
+        <!-- Facility 3 -->
+        <div class="flex flex-col items-center w-[340px]">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-xl border border-[#d3d5d7] rotate-3"
+            ></div>
+            <div
+              class="bg-neutral-900 rounded-xl w-[300px] h-[280px] flex items-center justify-center"
+            >
+              <img
+                src="./assets/icons/dinning.png"
+                class="w-[150px]"
+                alt="Dining"
+              />
+              <span
+                class="absolute bottom-4 right-5 text-white text-xl font-bold"
+                >3</span
+              >
+            </div>
+          </div>
+          <span class="text-2xl mt-7 font-semibold text-neutral-900"
+            >Private Dining</span
+          >
+        </div>
+        <!-- Facility 4 -->
+        <div class="flex flex-col items-center w-[340px]">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-xl border border-[#d3d5d7] -rotate-6"
+            ></div>
+            <div
+              class="bg-neutral-900 rounded-xl w-[300px] h-[280px] flex items-center justify-center"
+            >
+              <img
+                src="./assets/icons/bonfire.png"
+                class="w-[150px]"
+                alt="Bonfire Area"
+              />
+              <span
+                class="absolute bottom-4 right-5 text-white text-xl font-bold"
+                >4</span
+              >
+            </div>
+          </div>
+          <span class="text-2xl mt-7 font-semibold text-neutral-900"
+            >Bonfire Area</span
+          >
         </div>
       </div>
-      <span class="text-2xl mt-7 font-semibold text-neutral-900">Private Dining</span>
-    </div>
-    <!-- Facility 4 -->
-    <div class="flex flex-col items-center w-[240px]">
-      <div class="relative">
-        <div class="absolute inset-0 rounded-xl border border-[#d3d5d7] -rotate-6"></div>
-        <div class="bg-neutral-900 rounded-xl w-[200px] h-[180px] flex items-center justify-center">
-          <img src="./assets/icons/bonfire.png" class="w-20" alt="Bonfire Area">
-          <span class="absolute bottom-4 right-5 text-white text-xl font-bold">4</span>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="bg-white py-20 px-4 flex flex-col items-center">
+      <div class="w-20 h-1 bg-green-600 mb-6"></div>
+      <h2
+        class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-800 tracking-tight"
+      >
+        Guest Testimonials
+      </h2>
+      <div class="flex flex-wrap justify-center gap-8 w-full max-w-8xl">
+        <!-- Testimonial 1 -->
+        <div
+          class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center"
+        >
+          <img
+            src="./assets/icons/testi-woman.png"
+            alt="Guest 1"
+            class="w-16 h-16 rounded-full mb-4 border-4 border-green-200"
+          />
+          <p class="text-lg text-gray-800 mb-4 italic">
+            " I had an amazing experience at this resort! The rooms were clean,
+            spacious, and well-equipped, and the food was absolutely delicious
+            with great variety. Perfect for a relaxing getaway—highly
+            recommended!”
+          </p>
+          <span class="font-semibold text-green-700">Kritika Sharma</span>
+          <span class="text-gray-500 text-sm">Delhi, India</span>
+        </div>
+        <!-- Testimonial 2 -->
+        <div
+          class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center"
+        >
+          <img
+            src="./assets/icons/testi-man.png"
+            alt="Guest 2"
+            class="w-16 h-16 rounded-full mb-4 border-4 border-green-200"
+          />
+          <p class="text-lg text-gray-800 mb-4 italic">
+            “Nature at its best, jungle view. In the interior of village close
+            to the forest, peace, nature view all in one package. High look with
+            comfort rooms. Must visit resort.”
+          </p>
+          <span class="font-semibold text-green-700">Rinku Bisht</span>
+          <span class="text-gray-500 text-sm">Uttarakhand, India</span>
+        </div>
+        <!-- Testimonial 3 -->
+        <div
+          class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center"
+        >
+          <img
+            src="./assets/icons/testi-woman.png"
+            alt="Guest 3"
+            class="w-16 h-16 rounded-full mb-4 border-4 border-green-200"
+          />
+          <p class="text-lg text-gray-800 mb-4 italic">
+            “The food was amazing and the staff were very caring. Waking up to
+            nature every morning here was a dream.”
+          </p>
+          <span class="font-semibold text-green-700">Mandeep Kaur</span>
+          <span class="text-gray-500 text-sm">Chandigarh, India</span>
         </div>
       </div>
-      <span class="text-2xl mt-7 font-semibold text-neutral-900">Bonfire Area</span>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Testimonial Section -->
-<section class="bg-white py-20 px-4 flex flex-col items-center">
-  <div class="w-20 h-1 bg-green-600 mb-6"></div>
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-800 tracking-tight">Guest Testimonials</h2>
-  <div class="flex flex-wrap justify-center gap-8 w-full max-w-8xl">
-    <!-- Testimonial 1 -->
-    <div class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center">
-      <img src="./assets/icons/testi-woman.png" alt="Guest 1" class="w-16 h-16 rounded-full mb-4 border-4 border-green-200" />
-      <p class="text-lg text-gray-800 mb-4 italic">"
-I had an amazing experience at this resort!  The rooms were clean, spacious, and well-equipped, and the food was absolutely delicious with great variety. Perfect for a relaxing getaway—highly recommended!”
-      </p>
-      <span class="font-semibold text-green-700">Kritika Sharma</span>
-      <span class="text-gray-500 text-sm">Delhi, India</span>
-    </div>
-    <!-- Testimonial 2 -->
-    <div class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center">
-      <img src="./assets/icons/testi-man.png" alt="Guest 2" class="w-16 h-16 rounded-full mb-4 border-4 border-green-200" />
-      <p class="text-lg text-gray-800 mb-4 italic">
-        “Nature at its best, jungle view. In the interior of village close to the forest, peace, nature view all in one package. High look with comfort rooms. Must visit resort.”
-      </p>
-      <span class="font-semibold text-green-700">Rinku Bisht</span>
-      <span class="text-gray-500 text-sm">Uttarakhand, India</span>
-    </div>
-    <!-- Testimonial 3 -->
-    <div class="bg-green-50 shadow-lg rounded-xl p-8 max-w-sm text-center flex flex-col items-center">
-      <img src="./assets/icons/testi-woman.png" alt="Guest 3" class="w-16 h-16 rounded-full mb-4 border-4 border-green-200" />
-      <p class="text-lg text-gray-800 mb-4 italic">
-        “The food was amazing and the staff were very caring. Waking up to nature every morning here was a dream.”
-      </p>
-      <span class="font-semibold text-green-700">Mandeep Kaur</span>
-      <span class="text-gray-500 text-sm">Chandigarh, India</span>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<footer class="relative pt-14 pb-4 text-white bg-gradient-to-b from-[#183023] to-[#222b21]">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0 w-full h-full bg-[url('./assets/images/slide-2.webp')] bg-cover bg-center opacity-40"></div>
-  <!-- Overlay content -->
-  <div class="relative z-10 max-w-7xl mx-auto flex flex-wrap justify-between items-start gap-y-10 px-4 md:px-12">
-    <!-- Left: Logo and tagline -->
-    <div class="flex flex-col max-w-[350px]">
-      <div class="flex items-center gap-3 mb-5">
-        <img src="./assets/images/logo-cc.png" alt="Corbett Cabana Farm Logo" class="w-20 h-20 rounded-full" />
-        <div>
-          <h1 class="text-3xl font-bold text-white">Corbett Cabana Farm</h1>
-          <p class="text-md text-green-300 -mt-1">The Jungle Heaven</p>
+    <footer
+      class="relative pt-14 pb-4 text-white bg-gradient-to-b from-[#183023] to-[#222b21]"
+    >
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 z-0 w-full h-full bg-[url('./assets/images/slide-2.webp')] bg-cover bg-center opacity-40"
+      ></div>
+      <!-- Overlay content -->
+      <div
+        class="relative z-10 max-w-7xl mx-auto flex flex-wrap justify-between items-start gap-y-10 px-4 md:px-12"
+      >
+        <!-- Left: Logo and tagline -->
+        <div class="flex flex-col max-w-[350px]">
+          <div class="flex items-center gap-3 mb-5">
+            <img
+              src="./assets/images/logo-cc.png"
+              alt="Corbett Cabana Farm Logo"
+              class="w-20 h-20 rounded-full"
+            />
+            <div>
+              <h1 class="text-3xl font-bold text-white">Corbett Cabana Farm</h1>
+              <p class="text-md text-green-300 -mt-1">The Jungle Heaven</p>
+            </div>
+          </div>
+          <p class="text-base text-gray-200 leading-relaxed mb-5">
+            Escape to the heart of the jungle with comfort and luxury. Discover
+            tranquil stays, vibrant nature, and the perfect blend of relaxation
+            and adventure at Corbett Cabana Farm.
+          </p>
+        </div>
+        <!-- Center: Information -->
+        <div class="flex flex-col min-w-[180px] max-w-[200px]">
+          <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">
+            Information
+          </h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-teal-200">About Us</a></li>
+            <li>
+              <a href="#" class="hover:text-teal-200">Rooms & Accommodation</a>
+            </li>
+            <li><a href="#" class="hover:text-teal-200">Gallery</a></li>
+            <li>
+              <a href="#" class="hover:text-teal-200">Nearby Attractions</a>
+            </li>
+            <li><a href="#" class="hover:text-teal-200">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Right: Reach Us -->
+        <div class="flex flex-col min-w-[240px]">
+          <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">
+            Reach Us
+          </h3>
+          <div class="flex items-center mb-2">
+            <span class="mr-3 text-xl"><i class="fas fa-phone-alt"></i></span>
+            <span>+91-9876543210</span>
+          </div>
+          <div class="flex items-center mb-2">
+            <span class="mr-3 text-xl"><i class="fas fa-envelope"></i></span>
+            <span>contact@corbettcabana.com</span>
+          </div>
+          <div class="flex items-center mb-2">
+            <span class="mr-3 text-xl"
+              ><i class="fas fa-map-marker-alt"></i
+            ></span>
+            <span>
+              7CVQ+WR, Fatehpur Range,<br />
+              Uttarakhand 263140
+            </span>
+          </div>
         </div>
       </div>
-      <p class="text-base text-gray-200 leading-relaxed mb-5">
-        Escape to the heart of the jungle with comfort and luxury. Discover tranquil stays, vibrant nature, and the perfect blend of relaxation and adventure at Corbett Cabana Farm.
-      </p>
-   
-    </div>
-    <!-- Center: Information -->
-    <div class="flex flex-col min-w-[180px] max-w-[200px]">
-      <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">Information</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-teal-200">About Us</a></li>
-        <li><a href="#" class="hover:text-teal-200">Rooms & Accommodation</a></li>
-        <li><a href="#" class="hover:text-teal-200">Gallery</a></li>
-        <li><a href="#" class="hover:text-teal-200">Nearby Attractions</a></li>
-        <li><a href="#" class="hover:text-teal-200">Contact</a></li>
-      </ul>
-    </div>
-    <!-- Right: Reach Us -->
-    <div class="flex flex-col min-w-[240px]">
-      <h3 class="text-xl font-bold mb-3 border-b border-[#d3d5d7] pb-2">Reach Us</h3>
-      <div class="flex items-center mb-2">
-        <span class="mr-3 text-xl"><i class="fas fa-phone-alt"></i></span>
-        <span>+91-9876543210</span>
+      <div
+        class="relative z-10 border-t border-gray-700 mt-9 pt-5 text-center text-gray-400 text-base"
+      >
+        Copyright 2025 - Corbett Cabana Farm. All Rights Reserved.
       </div>
-      <div class="flex items-center mb-2">
-        <span class="mr-3 text-xl"><i class="fas fa-envelope"></i></span>
-        <span>contact@corbettcabana.com</span>
-      </div>
-      <div class="flex items-center mb-2">
-        <span class="mr-3 text-xl"><i class="fas fa-map-marker-alt"></i></span>
-        <span>
-          7CVQ+WR, Fatehpur Range,<br> Uttarakhand 263140
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="relative z-10 border-t border-gray-700 mt-9 pt-5 text-center text-gray-400 text-base">
-    Copyright 2025 - Corbett Cabana Farm. All Rights Reserved.
-  </div>
+    </footer>
 
-</footer>
-
-
-
-
-
-<script src="./js/main.js"></script>
-
-</body>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
