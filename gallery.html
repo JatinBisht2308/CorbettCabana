@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="https://cdn.tailwindcss.com"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="bg-white shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
@@ -197,11 +197,34 @@
         </a>
       </div>
     </nav>
-     <div class="flex justify-center items-center h-screen">
-      <div class='sk-ww-google-business-photo' data-embed-id='25618165'></div><script src='https://widgets.sociablekit.com/google-business-photos/widget.js' defer></script>
-     </div>
-      <script src="./js/main.js"></script>
-       <script>
+    <!-- HERO SECTION -->
+  <section class="relative w-full h-[250px] md:h-[250px] flex items-center justify-center bg-cover bg-center" style="background-image: url('./assets/images/slide-2.webp');">
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 text-center max-w-2xl px-5">
+      <h3 class="text-xl md:text-3xl font-extrabold text-white drop-shadow mb-4">Our Gallery</h1>
+      <p class="text-md md:text-lg text-white drop-shadow">
+        Explore beautiful moments from Corbett Cabana Farm—cabins, nature trails, and guest adventures.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- EMBEDDED PHOTOS SECTION -->
+  <section class="max-w-6xl mx-auto my-10 px-4 flex flex-col justify-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-green-700 mb-6 text-center">Photo Highlights</h2>
+    <div class="flex justify-center items-center w-full h-[600px] md:h-[650px] bg-white overflow-scroll">
+      <!-- Google Business Photos Embed -->
+      <div class='sk-ww-google-business-photo w-full h-full' data-embed-id='25618165'></div>
+    </div>
+  </section>
+
+    <script src="./js/main.js"></script>
+     <script
+          src="https://widgets.sociablekit.com/google-business-photos/widget.js"
+          defer
+        ></script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         const menuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
@@ -210,5 +233,5 @@
         });
       });
     </script>
-</body>
+  </body>
 </html>
